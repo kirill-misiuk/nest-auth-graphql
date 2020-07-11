@@ -1,0 +1,13 @@
+type Query {
+    hello: Result
+}
+type Mutation {
+    login(user: User): Result
+}
+input User{
+    username: String
+    password: String
+}
+type Result {
+    username: String
+}
