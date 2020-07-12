@@ -2,7 +2,7 @@ import { UseGuards } from '@nestjs/common';
 import { Resolver, Mutation, Query } from '@nestjs/graphql';
 import { CurrentUser } from './user.decorator';
 
-import { User } from './user.model';
+import { User, InputUser } from './user.model';
 import { GQLocalAuthGuard } from './graphql-local-auth.guard';
 
 @Resolver('Auth')
@@ -15,7 +15,7 @@ export class AuthResolver {
 
   @Mutation(() => User)
   @UseGuards(GQLocalAuthGuard)
-  login(@CurrentUser() user: User) {
+  login(@CurrentUser() user: InputUser) {
     return { username: 'ok' };
   }
 
