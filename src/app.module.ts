@@ -9,7 +9,7 @@ import { UserModule } from './features/user/user.module';
   imports: [UserModule,AuthModule,
     GraphQLModule.forRoot({
       playground: true,
-      typePaths: ['./**/*.graphql'],
+      autoSchemaFile: './src/schema.gql',
       context: ({ req }) => ({ req }),
     }),
   ],

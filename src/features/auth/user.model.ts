@@ -1,6 +1,5 @@
 import { Field, InputType, ObjectType } from '@nestjs/graphql';
 
-
 @ObjectType()
 export class User {
   @Field(() => String, { nullable: true })
@@ -10,11 +9,12 @@ export class User {
 }
 
 @InputType()
-export class UserInput {
+export class InputUser {
   @Field(() => String)
   username: string;
   @Field(() => String)
   password: string;
 }
+
 
 
